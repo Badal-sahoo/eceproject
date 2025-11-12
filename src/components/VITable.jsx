@@ -1,19 +1,15 @@
 import React from "react";
-import { calculateCurrent } from "../utils/calculateCurrent";
 
-export default function VITable({ data, setData, diodeType, mode }) {
-
-  const handleVoltageChange = (index, newV) => {
-    let temp = [...data];
-    const V = parseFloat(newV);
-    const I = calculateCurrent(V, diodeType, mode);
-    temp[index] = { voltage: V, current: Number(I.toFixed(6)) };
-    setData(temp);
+export default function VITable({ data, setData }) {
+  const handleVoltageChange = (index, newVoltage) => {
+    const newData = [...data];
+    newData[index].voltage = parseFloat(newVoltage);
+    setData(newData);
   };
 
   return (
-    <table border="1" cellPadding="8">
-      <thead>
+    <table border="1" cellPadding="8" style={{ margin: "20px auto", width: "60%" }}>
+      <thead style={{ background: "#006eff", color: "white" }}>
         <tr>
           <th>Voltage (V)</th>
           <th>Current (A)</th>
@@ -24,12 +20,15 @@ export default function VITable({ data, setData, diodeType, mode }) {
           <tr key={i}>
             <td>
               <input
+                type="number"
                 value={row.voltage}
                 onChange={(e) => handleVoltageChange(i, e.target.value)}
-                style={{ width: "80px" }}
+                style={{ width: "80px", textAlign: "center" }}
               />
             </td>
-            <td>{row.current}</td>
+            <td style={{ textAlign: "center" }}>
+              {row.current === "" ? "—" : row.current}
+            </td>
           </tr>
         ))}
       </tbody>

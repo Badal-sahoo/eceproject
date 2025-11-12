@@ -1,11 +1,10 @@
-/* Global Page Style */
+/* ========== Global Styles ========== */
 body {
   margin: 0;
   background: #f4f6fa;
   font-family: "Poppins", sans-serif;
 }
 
-/* Main Container */
 .app-container {
   width: 85%;
   margin: auto;
@@ -13,23 +12,37 @@ body {
   text-align: center;
 }
 
-/* Card Wrapper */
+/* ========== Card Styling ========== */
 .card {
   background: #ffffff;
   border-radius: 12px;
   padding: 20px 30px;
   margin-top: 25px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
 }
 
-/* Title */
+/* ========== Typography ========== */
 h1 {
   color: #333;
   font-weight: 600;
 }
 
-/* Form Controls */
-select, button {
+.description {
+  font-size: 16px;
+  color: #444;
+  max-width: 700px;
+  margin: 10px auto 20px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ========== Form Controls ========== */
+select,
+button {
   padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid #bbb;
@@ -50,7 +63,7 @@ button:hover {
   background: #0053c7;
 }
 
-/* Table */
+/* ========== Table Styling ========== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -79,4 +92,115 @@ input {
   border: 1px solid #bbb;
   border-radius: 6px;
   width: 90px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #0056b3;
+}
+
+/* ========== Header Section ========== */
+.header-section {
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #eef3ff 0%, #f9fbff 100%);
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.project-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #004aad;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #006eff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #006eff;
+  border-radius: 10px;
+  margin: 25px auto 0;
+}
+
+/* ========== Professional Footer ========== */
+.footer-section {
+  background: linear-gradient(135deg, #002b5b, #004aad);
+  color: white;
+  padding: 40px 0 15px;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 3px solid #007bff;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-column h3 {
+  color: #fff;
+  border-left: 4px solid #00c3ff;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  color: #e0e0e0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.members-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 6px;
+  color: #e0e0e0;
+  font-size: 15px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 25px;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #d0d0d0;
 }
